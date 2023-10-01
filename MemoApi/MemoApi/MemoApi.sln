@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoApi.Core", "MemoApi.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoApi.Adapter", "MemoApi.Adapter\MemoApi.Adapter.csproj", "{E3E67783-2E73-4458-9535-04D0904ABB73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoApi.Utils", "MemoApi.Untils\MemoApi.Utils.csproj", "{C51B4204-CBEB-4B18-8526-B639B4896DB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E3E67783-2E73-4458-9535-04D0904ABB73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3E67783-2E73-4458-9535-04D0904ABB73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3E67783-2E73-4458-9535-04D0904ABB73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C51B4204-CBEB-4B18-8526-B639B4896DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51B4204-CBEB-4B18-8526-B639B4896DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51B4204-CBEB-4B18-8526-B639B4896DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51B4204-CBEB-4B18-8526-B639B4896DB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
