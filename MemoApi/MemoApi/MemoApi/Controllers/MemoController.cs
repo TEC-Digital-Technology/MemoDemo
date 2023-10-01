@@ -9,6 +9,9 @@ namespace MemoApi.Controllers
 {
     public class MemoController : ApiController
     {
-
+        public object Test()
+        {
+            return null;
+        }
     }
 }
