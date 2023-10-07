@@ -118,10 +118,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\MemoConverter.cs" />
     <Compile Include="Converters\MessageConverter.cs" />
     <Compile Include="Exceptions\OperationFailedException.cs" />
+    <Compile Include="Infos\MemoInfo.cs" />
     <Compile Include="Infos\MessageInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIData\MemoUIData.cs" />
     <Compile Include="UIData\MessageUIData.cs" />
   </ItemGroup>
   <ItemGroup>
