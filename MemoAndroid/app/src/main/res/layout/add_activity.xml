@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
-            app:title="Memo App - Edit"
+            app:title="Memo App - Add"
             android:background="#bbbbbb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></androidx.appcompat.widget.Toolbar>
@@ -32,8 +32,8 @@
             android:layout_height="0dp"></EditText>
 
         <Button
-            android:id="@+id/btnEdit"
-            android:text="編輯"
+            android:id="@+id/btnAdd"
+            android:text="新增"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></Button>
     </LinearLayout>

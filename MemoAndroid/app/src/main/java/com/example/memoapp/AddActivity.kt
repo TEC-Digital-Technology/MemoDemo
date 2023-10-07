@@ -6,44 +6,27 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.memoapp.MemoApi.MemoApiUtils
 import com.example.memoapp.MemoApi.Request.AddMemoRequest
-import com.example.memoapp.MemoApi.Request.GetMemoRequest
-import com.example.memoapp.MemoApi.Request.UpdateMemoRequest
-import com.example.memoapp.MemoApi.Response.GetMemoResponse
+import com.example.memoapp.databinding.AddActivityBinding
 import com.example.memoapp.databinding.EditActivityBinding
 
-class EditActivity : AppCompatActivity() {
+class AddActivity : AppCompatActivity() {
 
-    private lateinit var binding: EditActivityBinding
-    private lateinit var memoInfo: GetMemoResponse
+    private lateinit var binding: AddActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = EditActivityBinding.inflate(layoutInflater)
+        binding = AddActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        MemoApiUtils.getMemo(GetMemoRequest(intent.getStringExtra("MemoID")!!), result = {
-            memoInfo = it
-            runOnUiThread {
-                binding.editTitle.setText(it.Title)
-                binding.editContent.setText(it.Content)
-            }
-        }, error = {
-            runOnUiThread {
-                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-            }
-        })
-
-
-        binding.btnEdit.setOnClickListener {
+        binding.btnAdd.setOnClickListener {
             if (binding.editTitle.text.toString().isBlank()
                 || binding.editContent.text.toString().isBlank()
             ) {
                 Toast.makeText(this, "標題或內容不得為空", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            MemoApiUtils.updateMemo(
-                UpdateMemoRequest(
-                    memoInfo.ID,
+            MemoApiUtils.addMemo(
+                AddMemoRequest(
                     binding.editTitle.text.toString(),
                     binding.editContent.text.toString()
                 ), result = {

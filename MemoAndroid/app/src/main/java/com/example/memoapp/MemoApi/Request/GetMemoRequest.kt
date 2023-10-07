@@ -1,5 +1,4 @@
 package com.example.memoapp.MemoApi.Request
 
-class GetMemoRequest {
-    lateinit var ID: String
+class GetMemoRequest(var ID: String) {
 }
