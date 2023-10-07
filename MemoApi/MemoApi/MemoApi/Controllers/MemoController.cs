@@ -7,11 +7,20 @@ using System.Web.Http;
 
 namespace MemoApi.Controllers
 {
+    /// <summary>
+    /// AAA
+    /// </summary>
+    /// <returns></returns>
     public class MemoController : ApiController
     {
-        public object Test()
+        /// <summary>
+        /// AAA
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public string Test()
         {
-            return null;
+            return "Yes";
         }
     }
 }

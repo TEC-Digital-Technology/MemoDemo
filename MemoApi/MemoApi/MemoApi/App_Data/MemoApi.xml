@@ -576,6 +576,18 @@
             <param name="actionExecutedContext">已執行動作內容</param>
             <param name="cancellationToken">傳播通知，表示應該取消作業</param>
         </member>
+        <member name="T:MemoApi.Controllers.MemoController">
+            <summary>
+            AAA
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MemoApi.Controllers.MemoController.Test">
+            <summary>
+            AAA
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:MemoApi.Handlers.APIExceptionHandler">
             <summary>
             API處理發生例外狀況的處理常式

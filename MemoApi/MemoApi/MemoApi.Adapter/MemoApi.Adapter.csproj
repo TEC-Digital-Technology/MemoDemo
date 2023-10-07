@@ -118,8 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\LoggingConfig.cs" />
-    <Compile Include="Attributes\LoggingActionFilterAttribute.cs" />
     <Compile Include="DataSource\Data.cs" />
     <Compile Include="Entities\MessageEntity.cs" />
     <Compile Include="MessageAdapter.cs" />

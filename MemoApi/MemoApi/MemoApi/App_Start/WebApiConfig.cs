@@ -4,6 +4,7 @@ using MemoApi.Untils.Enums;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.ExceptionHandling;
@@ -75,6 +76,7 @@ namespace MemoApi
                 routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            config.Initializer(config);
         }
     }
 }

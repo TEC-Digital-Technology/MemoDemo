@@ -31,13 +31,12 @@ namespace MemoApi.App_Start
             config.EnableSwagger("version/{apiVersion}", c =>
             {
                 c.SingleApiVersion("v1", $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name.Replace('.', ' ')} Document");
-                c.IncludeXmlComments(System.Web.Hosting.HostingEnvironment.MapPath($"~/App_Data/{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml"));
+                //c.IncludeXmlComments(System.Web.Hosting.HostingEnvironment.MapPath($"~/App_Data/{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml"));
                 c.UseFullTypeNameInSchemaIds();
-                c.DocumentFilter<EnumDescriptionDocumentFilter>();
-                c.SchemaFilter<SetExampleValuesSchemaFilter>();
-                c.OperationFilter<AuthorizeDescriptionSchemaFilter>();
-            })
-                .EnableSwaggerUi("docs/{*assetPath}", c =>
+                //c.DocumentFilter<EnumDescriptionDocumentFilter>();
+                //c.SchemaFilter<SetExampleValuesSchemaFilter>();
+                //c.OperationFilter<AuthorizeDescriptionSchemaFilter>();
+            }).EnableSwaggerUi("docs/{*assetPath}", c =>
                 {
                     c.DocumentTitle($"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name.Replace('.', ' ')}");
                 });

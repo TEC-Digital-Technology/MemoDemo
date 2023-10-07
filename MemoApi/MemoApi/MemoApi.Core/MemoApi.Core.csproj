@@ -118,8 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\LoggingConfig.cs" />
-    <Compile Include="Attributes\LoggingActionFilterAttribute.cs" />
     <Compile Include="Converters\MessageConverter.cs" />
     <Compile Include="Exceptions\OperationFailedException.cs" />
     <Compile Include="Infos\MessageInfo.cs" />

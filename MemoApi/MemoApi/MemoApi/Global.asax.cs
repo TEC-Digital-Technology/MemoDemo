@@ -19,10 +19,10 @@ namespace MemoApi
             GlobalConfiguration.Configure(CacheConfig.Register);
             GlobalConfiguration.Configure(SettingCollectionConfig.Register);
             GlobalConfiguration.Configure(MessagingConfig.Register);
-            GlobalConfiguration.Configure(SwaggerConfig.Register);
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            GlobalConfiguration.Configure(SwaggerConfig.Register);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
             // startup settings.
             //HttpConfiguration config = new HttpConfiguration();
             //CacheConfig.Register(config);
