@@ -1,4 +1,5 @@
 ﻿using MemoApi.Messaging;
+using MemoApi.Models;
 using MemoApi.Settings;
 using MemoApi.Untils.Enums;
 using Microsoft.Extensions.Caching.Memory;
@@ -31,13 +32,14 @@ namespace MemoApi.App_Start
                 throw new ArgumentNullException($"必須先註冊 {nameof(IMemoryCache)}");
             }
             SettingCollectionFactoryInternal settingCollectionInternal = settingCollectionInternalObject as SettingCollectionFactoryInternal;
-            ResultDefinition resultDefinition = new ResultDefinition(memoryCacheObject as MemoryCache);
-            if (!config.Properties.TryAdd(typeof(ResultFormatter<StatusCodeEnum>), new ResultFormatter<StatusCodeEnum>(
-                new TEC.Core.Web.WebApi.Settings.MessagingSettingCollectionFactory<StatusCodeEnum>(resultDefinition))))
+            SiteResponseBase.PreferredResultDefinition = new ResultDefinition(memoryCacheObject as MemoryCache);
+            SiteResponseBase.PreferredResultFormatter = new ResultFormatter<StatusCodeEnum>(
+               new TEC.Core.Web.WebApi.Settings.MessagingSettingCollectionFactory<StatusCodeEnum>(SiteResponseBase.PreferredResultDefinition));
+            if (!config.Properties.TryAdd(typeof(ResultFormatter<StatusCodeEnum>), SiteResponseBase.PreferredResultFormatter))
             {
                 throw new Exception($"無法註冊 {nameof(ResultFormatter<StatusCodeEnum>)} 的執行個體");
             }
-            if (!config.Properties.TryAdd(typeof(IResultDefinition<StatusCodeEnum>), resultDefinition))
+            if (!config.Properties.TryAdd(typeof(IResultDefinition<StatusCodeEnum>), SiteResponseBase.PreferredResultDefinition))
             {
                 throw new Exception($"無法註冊 {nameof(IResultDefinition<StatusCodeEnum>)} 的執行個體");
             }

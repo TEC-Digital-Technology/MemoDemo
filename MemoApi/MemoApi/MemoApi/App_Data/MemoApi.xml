@@ -101,15 +101,54 @@
         </member>
         <member name="T:MemoApi.Controllers.MemoController">
             <summary>
-            AAA
+            處理備忘錄相關的控制器
             </summary>
             <returns></returns>
         </member>
-        <member name="M:MemoApi.Controllers.MemoController.Test">
+        <member name="M:MemoApi.Controllers.MemoController.#ctor">
             <summary>
-            AAA
+            初始化 處理備忘錄相關的控制器
             </summary>
+        </member>
+        <member name="M:MemoApi.Controllers.MemoController.GetMemo(MemoApi.Models.Request.GetMemoRequest)">
+            <summary>
+            取得備忘錄資料
+            </summary>
+            <param name="request">取得備忘錄資料的請求實體</param>
             <returns></returns>
+        </member>
+        <member name="M:MemoApi.Controllers.MemoController.GetMemoList(MemoApi.Models.Request.GetMemoListRequest)">
+            <summary>
+            取得備忘錄清單資料
+            </summary>
+            <param name="request">取得備忘錄清單資料的請求實體</param>
+            <returns></returns>
+        </member>
+        <member name="M:MemoApi.Controllers.MemoController.AddMemo(MemoApi.Models.Request.AddMemoRequest)">
+            <summary>
+            新增備忘錄資料
+            </summary>
+            <param name="request">新增備忘錄資料的請求實體</param>
+            <returns></returns>
+        </member>
+        <member name="M:MemoApi.Controllers.MemoController.UpdateMemo(MemoApi.Models.Request.UpdateMemoRequest)">
+            <summary>
+            更新備忘錄資料
+            </summary>
+            <param name="request">更新備忘錄資料的請求實體</param>
+            <returns></returns>
+        </member>
+        <member name="M:MemoApi.Controllers.MemoController.DeleteMemo(MemoApi.Models.Request.DeleteMemoRequest)">
+            <summary>
+            刪除備忘錄資料
+            </summary>
+            <param name="request">刪除備忘錄資料的請求實體</param>
+            <returns></returns>
+        </member>
+        <member name="P:MemoApi.Controllers.MemoController.MemoUIData">
+            <summary>
+            處理備忘錄相關的 UIData
+            </summary>
         </member>
         <member name="T:MemoApi.Handlers.APIExceptionHandler">
             <summary>
@@ -253,6 +292,182 @@
             </summary>
             <param name="cultureKey"></param>
             <returns></returns>
+        </member>
+        <member name="T:MemoApi.Models.Request.AddMemoRequest">
+            <summary>
+            新增備忘錄的請求
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Request.AddMemoRequest.Title">
+            <summary>
+            取得或設定 標題
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Request.AddMemoRequest.Content">
+            <summary>
+            取得或設定 內容
+            </summary>
+        </member>
+        <member name="T:MemoApi.Models.Request.DeleteMemoRequest">
+            <summary>
+            刪除備忘錄的請求
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Request.DeleteMemoRequest.ID">
+            <summary>
+            取得或設定 備忘錄 ID
+            </summary>
+        </member>
+        <member name="T:MemoApi.Models.Request.GetMemoListRequest">
+            <summary>
+            取得備忘錄清單資料的請求
+            </summary>
+        </member>
+        <member name="T:MemoApi.Models.Request.GetMemoRequest">
+            <summary>
+            取得備忘錄資料的請求
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Request.GetMemoRequest.ID">
+            <summary>
+            取得或設定 備忘錄 ID
+            </summary>
+        </member>
+        <member name="T:MemoApi.Models.Request.UpdateMemoRequest">
+            <summary>
+            更新備忘錄的請求
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Request.UpdateMemoRequest.ID">
+            <summary>
+            取得或設定 備忘錄 ID
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Request.UpdateMemoRequest.Title">
+            <summary>
+            取得或設定 標題
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Request.UpdateMemoRequest.Content">
+            <summary>
+            取得或設定 內容
+            </summary>
+        </member>
+        <member name="T:MemoApi.Models.Response.AddMemoResponse">
+            <summary>
+            新增備忘錄的回應
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Response.AddMemoResponse.ID">
+            <summary>
+            取得或設定 備忘錄 ID
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Response.AddMemoResponse.Title">
+            <summary>
+            取得或設定 標題
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Response.AddMemoResponse.Content">
+            <summary>
+            取得或設定 內容
+            </summary>
+        </member>
+        <member name="T:MemoApi.Models.Response.DeleteMemoResponse">
+            <summary>
+            刪除備忘錄的回應
+            </summary>
+        </member>
+        <member name="T:MemoApi.Models.Response.GetMemoListResponse">
+            <summary>
+            取得備忘錄清單的回應
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Response.GetMemoListResponse.MemoList">
+            <summary>
+            取得或設定 備忘錄清單
+            </summary>
+        </member>
+        <member name="T:MemoApi.Models.Response.GetMemoResponse">
+            <summary>
+            取得備忘錄的回應
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Response.GetMemoResponse.ID">
+            <summary>
+            取得或設定 備忘錄 ID
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Response.GetMemoResponse.Title">
+            <summary>
+            取得或設定 標題
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Response.GetMemoResponse.Content">
+            <summary>
+            取得或設定 內容
+            </summary>
+        </member>
+        <member name="T:MemoApi.Models.Response.UpdateMemoResponse">
+            <summary>
+            更新備忘錄的回應
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Response.UpdateMemoResponse.ID">
+            <summary>
+            取得或設定 備忘錄 ID
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Response.UpdateMemoResponse.Title">
+            <summary>
+            取得或設定 標題
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.Response.UpdateMemoResponse.Content">
+            <summary>
+            取得或設定 內容
+            </summary>
+        </member>
+        <member name="T:MemoApi.Models.SiteResponseBase">
+            <summary>
+            Web Api使用的回應基底型別
+            </summary>
+        </member>
+        <member name="M:MemoApi.Models.SiteResponseBase.#ctor">
+            <summary>
+            使用ResponseConfig.ResultCodeDefinition所設定的預設訊息初始化回應物件(目前UI語系)
+            </summary>
+        </member>
+        <member name="M:MemoApi.Models.SiteResponseBase.#ctor(MemoApi.Untils.Enums.StatusCodeEnum)">
+            <summary>
+            以指定訊息初始化回應物件(目前UI語系)
+            </summary>
+            <param name="resultCodeSettingEnum">相關的訊息</param>
+        </member>
+        <member name="M:MemoApi.Models.SiteResponseBase.#ctor(MemoApi.Untils.Enums.StatusCodeEnum,TEC.Core.Web.WebApi.Messaging.ResultFormatter{MemoApi.Untils.Enums.StatusCodeEnum})">
+            <summary>
+            以指定訊息及訊息格式化物件初始化回應物件(目前UI語系)
+            </summary>
+            <param name="resultCodeSettingEnum">相關的訊息</param>
+            <param name="resultCodeFormatter">格式化訊息的物件</param>
+        </member>
+        <member name="M:MemoApi.Models.SiteResponseBase.#ctor(MemoApi.Untils.Enums.StatusCodeEnum,System.Globalization.CultureInfo,TEC.Core.Web.WebApi.Messaging.ResultFormatter{MemoApi.Untils.Enums.StatusCodeEnum})">
+            <summary>
+            以指定訊息、語系及訊息格式化物件初始化回應物件
+            </summary>
+            <param name="resultCodeSettingEnum">相關的訊息</param>
+            <param name="resultCodeFormatter">格式化訊息的物件</param>
+            <param name="cultureInfo">語系</param>
+        </member>
+        <member name="P:MemoApi.Models.SiteResponseBase.PreferredResultFormatter">
+            <summary>
+            設定或取得慣用的回傳訊息格式化物件
+            </summary>
+        </member>
+        <member name="P:MemoApi.Models.SiteResponseBase.PreferredResultDefinition">
+            <summary>
+            設定或取得慣用的回傳資料定義
+            </summary>
         </member>
         <member name="T:MemoApi.Settings.Collections.ApiApplicationSettingCollection">
             <summary>

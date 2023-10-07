@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MemoApi.Adapter.DataSource
 {
@@ -12,6 +8,10 @@ namespace MemoApi.Adapter.DataSource
     /// </summary>
     public static class Data
     {
+        static Data()
+        {
+            Data.MemoList = new List<MemoData>();
+        }
         /// <summary>
         /// 取得或設定 備忘錄清單
         /// </summary>

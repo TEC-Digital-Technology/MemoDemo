@@ -207,13 +207,23 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\LoggingActionFilterAttribute.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MemoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Handlers\APIExceptionHandler.cs" />
     <Compile Include="Messaging\ResultDefinition.cs" />
+    <Compile Include="Models\Request\AddMemoRequest.cs" />
+    <Compile Include="Models\Request\DeleteMemoRequest.cs" />
+    <Compile Include="Models\Request\GetMemoListRequest.cs" />
+    <Compile Include="Models\Request\GetMemoRequest.cs" />
+    <Compile Include="Models\Request\UpdateMemoRequest.cs" />
+    <Compile Include="Models\Response\AddMemoResponse.cs" />
+    <Compile Include="Models\Response\DeleteMemoResponse.cs" />
+    <Compile Include="Models\Response\GetMemoListResponse.cs" />
+    <Compile Include="Models\Response\GetMemoResponse.cs" />
+    <Compile Include="Models\Response\UpdateMemoResponse.cs" />
+    <Compile Include="Models\SiteResponseBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\Collections\ApiApplicationSettingCollection.cs" />
     <Compile Include="Settings\SettingCollectionFactoryInternal.cs" />
@@ -236,10 +246,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Request\" />
-    <Folder Include="Models\Response\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
