@@ -14,22 +14,12 @@ namespace MemoApi
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             GlobalConfiguration.Configure(CacheConfig.Register);
             GlobalConfiguration.Configure(SettingCollectionConfig.Register);
             GlobalConfiguration.Configure(MessagingConfig.Register);
             GlobalConfiguration.Configure(WebApiConfig.Register);
             GlobalConfiguration.Configure(SwaggerConfig.Register);
-            //RouteConfig.RegisterRoutes(RouteTable.Routes);
-            //BundleConfig.RegisterBundles(BundleTable.Bundles);
-            // startup settings.
-            //HttpConfiguration config = new HttpConfiguration();
-            //CacheConfig.Register(config);
-            //SettingCollectionConfig.Register(config);
-            //MessagingConfig.Register(config);
-            //WebApiConfig.Register(config);
-            //SwaggerConfig.Register(config);
         }
     }
 }
