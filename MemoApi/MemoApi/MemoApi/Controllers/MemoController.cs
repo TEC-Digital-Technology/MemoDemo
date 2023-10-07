@@ -54,12 +54,7 @@ namespace MemoApi.Controllers
             var memoInfos = this.MemoUIData.GetMemoList();
             return new GetMemoListResponse()
             {
-                MemoList = memoInfos.Select(t => new GetMemoResponse()
-                {
-                    ID = t.ID,
-                    Title = t.Title,
-                    Content = t.Content
-                }).ToList()
+                MemoList = memoInfos
             };
         }
 

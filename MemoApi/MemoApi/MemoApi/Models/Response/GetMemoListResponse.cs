@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MemoApi.Core.Infos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,6 @@ namespace MemoApi.Models.Response
         /// <summary>
         /// 取得或設定 備忘錄清單
         /// </summary>
-        public List<GetMemoResponse> MemoList { get; set; }
+        public List<MemoInfo> MemoList { get; set; }
     }
 }
