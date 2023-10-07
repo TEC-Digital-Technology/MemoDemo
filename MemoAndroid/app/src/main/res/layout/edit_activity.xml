@@ -4,28 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.appcompat.widget.Toolbar
-            app:title="Memo App"
+            app:title="Memo App - Edit"
             android:background="#bbbbbb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></androidx.appcompat.widget.Toolbar>
 
-        <ListView
-            android:id="@+id/listView"
+        <EditText
+            android:id="@+id/editTitle"
+            android:inputType="text"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="0dp"></ListView>
+            android:layout_height="0dp"></EditText>
+
+        <EditText
+            android:id="@+id/editContent"
+            android:inputType="text"
+            android:layout_weight="6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"></EditText>
 
         <Button
-            android:id="@+id/btnAdd"
-            android:text="新增"
+            android:id="@+id/btnEdit"
+            android:text="編輯"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></Button>
     </LinearLayout>
