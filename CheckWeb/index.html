@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>資料清單</title>
+    <script src=".\code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+        .memo-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="memo-list">
+ 這裡將顯示 API 中的資料清單 
+</div>
+
+    <script type="text/javascript">
+        // 定義一個函數，用於獲取並顯示 API 中的資料清單
+        function getMemoList() {
+            $.ajax({
+                url: 'http://localhost:7428/api/memo/GetMemoList',
+                data: {},
+                method: 'POST',
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.ResultCode === '0000') {
+                        // 清空資料清單
+                        $('#memo-list').empty();
+
+                        // 迭代資料清單並以卡片方式顯示
+                        $.each(data.MemoList, function (index, memo) {
+                            var memoCard = '<div class="memo-card">';
+                            memoCard += '<h2>' + memo.Title + '</h2>';
+                            memoCard += '<p>' + memo.Content + '</p>';
+                            memoCard += '</div>';
+                            $('#memo-list').append(memoCard);
+                        });
+                    } else {
+                        console.error('API 錯誤：' + data.ResultMessage);
+                    }
+                },
+                error: function () {
+                    console.error('無法連接到 API');
+                }
+            });
+        }
+
+        // 首次載入頁面時獲取資料清單
+        getMemoList();
+
+        // 每五秒重新載入資料清單
+        setInterval(getMemoList, 5000);
+    </script>
+</body>
+</html>
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>資料清單</title>
+    <style>
+        /* CSS 样式可以根据需要进行自定义 */
+        .memo-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="memo-list">-->
+        <!-- 這裡將顯示 API 中的資料清單 -->
+    <!--</div>
+
+    <script>
+        // 定義一個函數，用於獲取並顯示 API 中的資料清單
+        function getMemoList() {
+            fetch('http://localhost:7428/api/memo/GetMemoList')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ResultCode === '0000') {
+                        // 清空資料清單
+                        var memoListContainer = document.getElementById('memo-list');
+                        memoListContainer.innerHTML = '';
+
+                        // 迭代資料清單並以卡片方式顯示
+                        data.MemoList.forEach(function (memo) {
+                            var memoCard = document.createElement('div');
+                            memoCard.className = 'memo-card';
+                            memoCard.innerHTML = '<h2>' + memo.Title + '</h2><p>' + memo.Content + '</p>';
+                            memoListContainer.appendChild(memoCard);
+                        });
+                    } else {
+                        console.error('API 錯誤：' + data.ResultMessage);
+                    }
+                })
+                .catch(error => {
+                    console.error('無法連接到 API：' + error);
+                });
+        }
+
+        // 首次載入頁面時獲取資料清單
+        getMemoList();
+
+        // 每五秒重新載入資料清單
+        setInterval(getMemoList, 5000);
+    </script>
+</body>
+</html>-->
