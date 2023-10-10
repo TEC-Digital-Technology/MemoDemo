@@ -34,12 +34,11 @@ namespace MemoApi.Controllers
         [HttpPost]
         public GetMemoResponse GetMemo(GetMemoRequest request)
         {
-            var memoInfo = this.MemoUIData.GetMemoById(request.ID);
             return new GetMemoResponse()
             {
-                ID = memoInfo.ID,
-                Title = memoInfo.Title,
-                Content = memoInfo.Content
+                ID = Guid.NewGuid(),
+                Title = "Title",
+                Content = "Content"
             };
         }
 
@@ -51,10 +50,17 @@ namespace MemoApi.Controllers
         [HttpPost]
         public GetMemoListResponse GetMemoList(GetMemoListRequest request)
         {
-            var memoInfos = this.MemoUIData.GetMemoList();
             return new GetMemoListResponse()
             {
-                MemoList = memoInfos
+                MemoList = new List<Core.Infos.MemoInfo>()
+                {
+                    new Core.Infos.MemoInfo()
+                    {
+                        ID = Guid.NewGuid(),
+                        Title = "Title",
+                        Content = "Content"
+                    }
+                }
             };
         }
 
@@ -66,16 +72,11 @@ namespace MemoApi.Controllers
         [HttpPost]
         public AddMemoResponse AddMemo(AddMemoRequest request)
         {
-            var memoInfo = this.MemoUIData.AddMemo(new Core.Infos.MemoInfo()
-            {
-                Title = request.Title,
-                Content = request.Content
-            });
             return new AddMemoResponse()
             {
-                ID = memoInfo.ID,
-                Title = memoInfo.Title,
-                Content = memoInfo.Content
+                ID = Guid.NewGuid(),
+                Title = "Title",
+                Content = "Content"
             };
         }
 
@@ -87,17 +88,11 @@ namespace MemoApi.Controllers
         [HttpPost]
         public UpdateMemoResponse UpdateMemo(UpdateMemoRequest request)
         {
-            var memoInfo = this.MemoUIData.UpdateMemo(new Core.Infos.MemoInfo()
-            {
-                ID = request.ID,
-                Title = request.Title,
-                Content = request.Content
-            });
             return new UpdateMemoResponse()
             {
-                ID = memoInfo.ID,
-                Title = memoInfo.Title,
-                Content = memoInfo.Content
+                ID = Guid.NewGuid(),
+                Title = "Title",
+                Content = "Content"
             };
         }
 
@@ -109,7 +104,6 @@ namespace MemoApi.Controllers
         [HttpPost]
         public DeleteMemoResponse DeleteMemo(DeleteMemoRequest request)
         {
-            this.MemoUIData.DeleteMemo(request.ID);
             return new DeleteMemoResponse();
         }
 
