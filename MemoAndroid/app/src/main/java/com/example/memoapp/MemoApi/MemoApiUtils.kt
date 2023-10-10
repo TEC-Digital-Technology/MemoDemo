@@ -2,12 +2,10 @@ package com.example.memoapp.MemoApi
 
 import com.example.memoapp.MemoApi.Request.AddMemoRequest
 import com.example.memoapp.MemoApi.Request.DeleteMemoRequest
-import com.example.memoapp.MemoApi.Request.GetMemoListRequest
 import com.example.memoapp.MemoApi.Request.GetMemoRequest
 import com.example.memoapp.MemoApi.Request.UpdateMemoRequest
 import com.example.memoapp.MemoApi.Response.AddMemoResponse
 import com.example.memoapp.MemoApi.Response.DeleteMemoResponse
-import com.example.memoapp.MemoApi.Response.GetMemoListResponse
 import com.example.memoapp.MemoApi.Response.GetMemoResponse
 import com.example.memoapp.MemoApi.Response.ResponseBase
 import com.example.memoapp.MemoApi.Response.UpdateMemoResponse
@@ -20,7 +18,6 @@ import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 import java.io.IOException
-import kotlin.jvm.Throws
 
 object MemoApiUtils {
     val baseUrl = "http://10.0.2.2/MemoApi.WebApi/api/Memo/"
@@ -62,16 +59,6 @@ object MemoApiUtils {
                 return@request
             }
             result(Gson().fromJson(resultString, GetMemoResponse::class.java))
-        }
-    }
-
-    fun getMemoList(request: GetMemoListRequest, result : (GetMemoListResponse) -> Unit, error : (String) -> Unit){
-        request(getRequest("${baseUrl}GetMemoList", Gson().toJson(request))){resultString, isError ->
-            if(isError){
-                error(resultString)
-                return@request
-            }
-            result(Gson().fromJson(resultString, GetMemoListResponse::class.java))
         }
     }
 

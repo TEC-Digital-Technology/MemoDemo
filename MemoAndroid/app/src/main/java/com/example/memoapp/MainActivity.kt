@@ -9,8 +9,6 @@ import android.widget.BaseAdapter
 import android.widget.Toast
 import com.example.memoapp.MemoApi.MemoApiUtils
 import com.example.memoapp.MemoApi.Request.DeleteMemoRequest
-import com.example.memoapp.MemoApi.Request.GetMemoListRequest
-import com.example.memoapp.MemoApi.Response.GetMemoListResponse
 import com.example.memoapp.databinding.ActivityMainBinding
 import com.example.memoapp.databinding.ItemMemoListBinding
 
